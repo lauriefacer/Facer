@@ -15,11 +15,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db import connection
 from django.contrib.auth.models import User
 from .apiViews import ManageBreadCrumbs
-import docx
 import tkinter as tk
 from tkinter import filedialog
 import os
-import win32com.client as win32
 
 
 #def readtxt(filename):
@@ -29,17 +27,6 @@ import win32com.client as win32
 #        fullText.append(para.text)
 #    return '\n'.join(fullText)
 
-@login_required
-def word_test():
-    root = tk.Tk()
-    root.withdraw()
-    file_path = filedialog.askopenfilename()
-    print(f"Path: {file_path}")
-    word = win32.gencache.EnsureDispatch('Word.Application')
-    word.Visible = True
-    doc = word.Documents.Open(file_path)
-    _ = input("Press enter to close Excel")
-    word.Application.Quit()
 
 
 class TreeListView(ListView):
