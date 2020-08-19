@@ -10,7 +10,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+<<<<<<< HEAD
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+=======
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+>>>>>>> e81a2ff16302f0abbcfe5bc77da36b920ce283dd
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -155,4 +159,8 @@ DEFAULT_FROM_EMAIL = 'LaurieFacer<laurie@facer.com.au'
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
+<<<<<<< HEAD
 DATABASES['default'].update(db_from_env)
+=======
+DATABASES['default'].update(db_from_env)
+>>>>>>> e81a2ff16302f0abbcfe5bc77da36b920ce283dd
