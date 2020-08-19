@@ -29,6 +29,7 @@ import win32com.client as win32
 #        fullText.append(para.text)
 #    return '\n'.join(fullText)
 
+@login_required
 def word_test():
     root = tk.Tk()
     root.withdraw()
@@ -194,7 +195,7 @@ class TheoryCreateView(LoginRequiredMixin,CreateView):
     def get_success_url(self):
         return reverse('theories_home')
 
-
+@login_required
 @csrf_exempt
 def theory_concept(request,pk):
     theory = Theories.objects.filter(theory=pk)
@@ -237,6 +238,7 @@ class TheoryConceptCreate(LoginRequiredMixin,CreateView):
         url_name = '/theories/{}'.format(self.theory)
         return HttpResponseRedirect(url_name)
 
+@login_required
 def link_concepts(request,pk):
     theory = Theories.objects.filter(theory=pk)
     if request.method == 'POST':
