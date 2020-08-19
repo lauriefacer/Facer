@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'theories.apps.AuthenticConfig',
     'djmoney',
     'django_prices',
-    'treenode',
 ]
 
 MIDDLEWARE = [
