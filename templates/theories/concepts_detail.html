@@ -1,0 +1,43 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="draw">
+        {% for object in object_list %}
+            {% if forloop.first %}
+                <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'theories_detail'  object.theory_id  %}">Return</a>
+                <h4>Link concept to theory {{ object.theory_name }}</h4>
+                <p></p>
+            {% endif %}
+            <a class="btn btn-secondary btn-sm mt-1 mb-1 likebutton" data-concept="{{ object.id }}" data-theory="{{ object.theory_id }}"
+               href="#">Link</a>
+            <strong>{{ object.concept }}</strong>
+            <a>{{ object.concept_description }}</a>
+            <p></p>
+        {% endfor %}
+    </div>
+    {% include 'theories\includes\paging.html' %}
+    <script type="text/javascript">
+        $('.likebutton').click(function(){
+        var concept_id;
+        concept_id = $(this).attr("data-concept");
+        var theory_id;
+        theory_id = $(this).attr("data-theory");
+        ref=location.href;
+        $.ajax(
+        {
+            type:"POST",
+            data:{concept_id: concept_id, theory_id: theory_id},
+            url: "../link_concept_theory_create/",
+            success: function( data )
+            {
+                $( '#like'+ concept_id ).remove();
+                $( '#like'+ theory_id ).remove();
+                $( '#message' ).text(data);
+                console.log(data.success);
+                prev_url = data.success;
+                window.location.assign(data.success);
+            }
+         })
+    });
+    </script>
+{% endblock %}

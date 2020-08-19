@@ -1,0 +1,32 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+@import './variables.scss';
+
+.#{$ZIPPY_TEXT_AREA_ROOT_CLASS}.#{$ZIPPY_TEXT_AREA_ROOT_CLASS}--theme-#{$THEME_NAME} {
+  font-size: $ZIPPY_TEXT_AREA_FONT_SIZE;
+  color: $ZIPPY_TEXT_AREA_FONT_COLOR;
+  border: $ZIPPY_TEXT_AREA_BORDER;
+  background: $ZIPPY_TEXT_AREA_BG_COLOR;
+  padding: $ZIPPY_TEXT_AREA_PADDING;
+  transition: all 0.2s;
+
+  &:hover {
+    border: $ZIPPY_TEXT_AREA_BORDER_HOVER;
+  }
+
+  &.#{$ZIPPY_TEXT_AREA_ROOT_CLASS}--disabled {
+    color: $ZIPPY_TEXT_AREA_DISABLED_FONT_COLOR;
+    opacity: 0.5;
+  }
+
+  &.#{$ZIPPY_TEXT_AREA_ROOT_CLASS}--focused {
+    border: $ZIPPY_TEXT_AREA_BORDER_FOCUSED;
+    box-shadow: $ZIPPY_TEXT_AREA_BOX_SHADOW;
+  }
+}

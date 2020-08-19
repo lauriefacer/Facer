@@ -1,0 +1,113 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+@import './theme/default/variables.scss';
+
+.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--horizontal-orientation:after {
+  left: 50%;
+  margin-left: -5px;
+}
+
+.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--horizontal-orientation.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--before-position {
+  bottom: 100%;
+  margin-bottom: 7px;
+
+  &:after {
+    border-color: rgba($ZIPPY_SLIDER_TOOLTIP_MAIN_COLOR, 0.9) transparent
+      transparent transparent;
+    top: 20px;
+  }
+}
+
+.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--horizontal-orientation.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--after-position {
+  background-color: red;
+  top: 100%;
+  margin-top: 7px;
+
+  &:after {
+    border-color: transparent transparent
+      rgba($ZIPPY_SLIDER_TOOLTIP_MAIN_COLOR, 0.9) transparent;
+    bottom: 20px;
+  }
+}
+
+.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--vertical-orientation:after {
+  top: 50%;
+  margin-top: -5px;
+}
+
+.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--vertical-orientation.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--before-position {
+  right: 100%;
+  margin-right: 7px;
+
+  &:after {
+    border-color: transparent transparent transparent
+      rgba($ZIPPY_SLIDER_TOOLTIP_MAIN_COLOR, 0.9);
+    right: -14px;
+  }
+}
+
+.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--vertical-orientation.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS}--after-position {
+  left: 100%;
+  margin-left: 7px;
+
+  &:after {
+    border-color: transparent rgba($ZIPPY_SLIDER_TOOLTIP_MAIN_COLOR, 0.9)
+      transparent transparent;
+    left: -14px;
+  }
+}
+
+.#{$ZIPPY_SLIDER_TOOLTIP_ROOT_CLASS} {
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  min-width: 32px;
+  height: 24px;
+  font-size: 13px;
+  text-align: center;
+  color: #e9ecf0;
+  background: rgba($ZIPPY_SLIDER_TOOLTIP_MAIN_COLOR, 0.9);
+  border: 4px solid transparent;
+  text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0;
+  transition: all 0.2s ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+  }
+
+  &--is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &--animate-in {
+    opacity: 0;
+  }
+
+  &--animate-in-end {
+    opacity: 1;
+  }
+
+  &--animate-out {
+    opacity: 1;
+  }
+
+  &--animate-out-end {
+    opacity: 0;
+  }
+}

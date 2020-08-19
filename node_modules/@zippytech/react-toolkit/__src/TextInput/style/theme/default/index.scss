@@ -1,0 +1,54 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+@import './variables.scss';
+
+.#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}.#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}--theme-#{$THEME_NAME} {
+  font-size: $ZIPPY_TEXT_INPUT_FONT_SIZE;
+  fill: $ZIPPY_TEXT_INPUT_ICON_FILL;
+  border: $ZIPPY_TEXT_INPUT_BORDER;
+  background: $ZIPPY_TEXT_INPUT_BG_COLOR;
+  min-height: $ZIPPY_TEXT_INPUT_MIN_HEIGHT;
+  height: $ZIPPY_TEXT_INPUT_MIN_HEIGHT;
+  transition: all 0.2s;
+
+  input.#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}__input {
+    color: $ZIPPY_TEXT_INPUT_FONT_COLOR;
+    font-size: $ZIPPY_TEXT_INPUT_FONT_SIZE;
+  }
+
+  input.#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}__input::placeholder {
+    color: $ZIPPY_TEXT_INPUT_PLACEHOLDER_COLOR;
+  }
+
+  &:hover {
+    border: $ZIPPY_TEXT_INPUT_BORDER_HOVER;
+  }
+
+  &.#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}--disabled {
+    fill: $ZIPPY_TEXT_INPUT_DISABLED_ICON_FILL;
+    opacity: 0.5;
+
+    &:hover {
+      border: $ZIPPY_TEXT_INPUT_BORDER;
+    }
+  }
+
+  &.#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}--focused {
+    border: $ZIPPY_TEXT_INPUT_BORDER_FOCUSED;
+    box-shadow: $ZIPPY_TEXT_INPUT_BOX_SHADOW;
+  }
+
+  .#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}__spinner-wrapper {
+    margin: $ZIPPY_TEXT_INPUT_SPINNER_MARGIN;
+  }
+
+  .#{$ZIPPY_TEXT_INPUT_ROOT_CLASS}__clear-button:focus {
+    outline: 1px dotted #3c5c99;
+  }
+}

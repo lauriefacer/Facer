@@ -1,0 +1,31 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.zippy-react-toolkit-load-mask.zippy-react-toolkit-load-mask--theme-#{$ZIPPY_LOAD_MASK_THEME_NAME} {
+  fill: $ZIPPY_LOAD_MASK_MAIN_COLOR;
+
+  .zippy-react-toolkit-load-mask__background-layer {
+    background: rgba($ZIPPY_LOAD_MASK_MAIN_COLOR, 0.5);
+  }
+
+  .zippy-react-toolkit-load-mask__loader--svg {
+    animation: zippy-react-toolkit-loadmask-spin 1.5s linear infinite;
+  }
+
+  @keyframes zippy-react-toolkit-loadmask-spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .zippy-react-toolkit-load-mask__loader-loadbar {
+    border-radius: 50px;
+    box-shadow: 0 0 3px $ZIPPY_LOAD_MASK_SECONDARY_COLOR;
+  }
+}

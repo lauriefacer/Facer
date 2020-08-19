@@ -1,0 +1,27 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$ZIPPY_SLIDER_THEME_NAME: 'default' !default;
+$ZIPPY_SLIDER_SLIDER_BAR_BACKGROUND: #e5e5e5 !default;
+$ZIPPY_SLIDER_TRACK_BAR_BACKGROUND: #6582b8 !default;
+$ZIPPY_SLIDER_HANDLERS_BACKGROUND: #81a6eb !default;
+
+$ZIPPY_SLIDER_BORDER_FOCUS: 1px dotted #a1b6d3 !default;
+
+$ZIPPY_SLIDER_TRACK_BAR_BACKGROUND_FOCUS: #495e85 !default;
+$ZIPPY_SLIDER_HANDLERS_BACKGROUND_FOCUS: #495e85 !default;
+
+$ZIPPY_SLIDER_TICKS_BIG_BACKGROUND: #c5c5c5 !default;
+$ZIPPY_SLIDER_TICKS_SMALL_BACKGROUND: #e5e5e5 !default;
+
+$ZIPPY_SLIDER_BUTTONS_FILL: #495e85 !default;
+$ZIPPY_SLIDER_BUTTONS_FILL_HOVER: #3c5c99 !default;
+
+$ZIPPY_SLIDER_TOOLTIP_MAIN_COLOR: #495e85 !default;
+$ZIPPY_SLIDER_TICK_COLOR: #525252 !default;

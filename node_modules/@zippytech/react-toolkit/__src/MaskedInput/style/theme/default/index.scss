@@ -1,0 +1,56 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}.#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}--theme-#{$ZIPPY_MASKED_INPUT_THEME_NAME} {
+  padding: 6px 0 5px 8px;
+  min-height: 32px;
+  border: $ZIPPY_MASKED_INPUT_BORDER;
+  color: $ZIPPY_MASKED_INPUT_COLOR;
+  transition: border 0.2s;
+  background: $ZIPPY_MASKET_INPUT_WHITE_BG;
+
+  &:hover {
+    border: $ZIPPY_MASKED_INPUT_BORDER_HOVER;
+  }
+
+  .#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}--input {
+    color: $ZIPPY_MASKED_INPUT_COLOR;
+    font-size: $ZIPPY_MASKET_INPUT_FONT_SIZE;
+  }
+
+  &.#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}--focused {
+    border: $ZIPPY_MASKED_INPUT_BORDER_FOCUS;
+    box-shadow: $ZIPPY_MASKED_INPUT_BOX_SHADOW;
+  }
+
+  &.#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}--disabled {
+    background: $ZIPPY_MASKET_INPUT_WHITE_BG;
+    color: $ZIPPY_MASKED_INPUT_COLOR;
+    opacity: 0.5;
+
+    &:hover {
+      border: $ZIPPY_MASKED_INPUT_BORDER;
+    }
+
+    .#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}--input {
+      background: $ZIPPY_MASKET_INPUT_WHITE_BG;
+      color: $ZIPPY_MASKED_INPUT_COLOR;
+    }
+  }
+
+  .#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}__clear-button {
+    svg {
+      fill: $ZIPPY_MASKET_INPUT_CLEAR_BUTTON_FILL;
+    }
+  }
+
+  .#{$ZIPPY_MASKED_INPUT_ROOT_CLASS}__clear-button:focus {
+    outline: 1px dotted #3c5c99;
+  }
+}

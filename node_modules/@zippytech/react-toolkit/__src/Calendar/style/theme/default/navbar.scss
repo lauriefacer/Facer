@@ -1,0 +1,76 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar--theme-#{$ZIPPY_CALENDAR_THEME_NAME} {
+  padding: 0 2px;
+  font-size: $ZIPPY_CALENDAR_HEADER_FONT_SIZE;
+  background: $ZIPPY_CALENDAR_HEADER_BACKGROUND;
+  color: $ZIPPY_CALENDAR_HEADER_FONT_COLOR;
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-arrows-pos {
+    min-height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+
+    &:hover {
+      fill: $ZIPPY_CALENDAR_NAV_BAR_ARROW_COLOR_HOVER;
+      background: $ZIPPY_CALENDAR_SELECTED_BACKGROUND;
+    }
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-date {
+    min-height: 32px;
+    height: 32px;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-arrows-div {
+    display: inline-flex;
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-month-decade-view {
+    background: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(73, 94, 133, 0.5);
+  }
+
+  &.#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar--with-month-decade-view {
+    .#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-date {
+      cursor: pointer;
+    }
+
+    .#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-date-disabled {
+      cursor: initial;
+    }
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-arrow {
+    fill: $ZIPPY_CALENDAR_NAV_BAR_ARROW_COLOR;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 0;
+    transform: translateY(0);
+
+    &--disabled {
+      fill: $ZIPPY_CALENDAR_NAV_BAR_ARROW_COLOR_DISABLED;
+    }
+
+    &:not(.#{$ZIPPY_CALENDAR_ROOT_CLASS}__nav-bar-arrows-pos--disabled) {
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+}

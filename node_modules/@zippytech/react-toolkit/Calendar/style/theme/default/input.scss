@@ -1,0 +1,19 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.#{$ZIPPY_CALENDAR_ROOT_CLASS}__input--theme-#{$ZIPPY_CALENDAR_THEME_NAME} {
+  border: none;
+  outline: none;
+  padding-left: 8px;
+  min-height: 30px;
+  color: $ZIPPY_CALENDAR_WEEK_DAYS_FONT_COLOR;
+  font-size: $ZIPPY_CALENDAR_WEEK_DAYS_FONT_SIZE;
+
+  &.#{$ZIPPY_CALENDAR_ROOT_CLASS}__input--disabled {
+    color: rgba(#525252, 0.5);
+  }
+}

@@ -1,0 +1,58 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="draw">
+        {% for object in object_list %}
+            {% if forloop.first %}
+                <div class="article-metadata">
+                    <div>
+                        <a class="btn btn-primary btn-sm mt-1 mb-1 prev" href="#">Prev</a>
+                        <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'theories_home' %}">Return</a>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1"
+                            href="{% url 'concepts_update' pk=object.id theory=object.theory_id%}">Modify</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1"
+                           href=" {%  url 'concept_delete' object.id%}">Delete</a>
+                    </div>
+                </div>
+                <h4>{{ object.concept }}</h4>
+                <p></p>
+                <a>{{ object.concept_description }}</a>
+                <p></p>
+                <a class="btn btn-outline-info btn-sm mt-1 mb-1"
+                   href="{% url 'concept_component' object.id object.theory_id%}">New Component</a>
+                <a class="btn btn-outline-info btn-sm mt-1 mb-1"
+                   href=" {% url 'components_link' object.id object.theory_id %}">Link Component</a>
+                <h5>Components</h5>
+                <p></p>
+            {% endif %}
+            {% if object.component_name %}
+                <a class="btn btn-danger btn-sm mt-1 mb-1"
+                    href="{% url 'component_link_delete' pk=object.id component=object.component_id theory=object.theory_id %}">Delete</a>
+                <a href="{% url 'components_detail' pk=object.component_id theory=object.theory_id %}"> {{ object.component_name }}</a>
+                <a class="myDiv"> {{ object.component_description_short }}</a>
+                <a class="hide"> {{ object.component_description_long }}</a>
+                <P></P>
+            {% endif %}
+        {% endfor %}
+    {% if is_paginated %}
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                    {% if num != page_obj.paginator.num_pages and num != 1 %}
+                        <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+        {% endif %}
+    </div>
+    {% include 'theories\includes\breadcrumbs.html' %}
+{% endblock %}

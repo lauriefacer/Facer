@@ -1,0 +1,85 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+@import '../../../../Button/style/theme/default/index.scss';
+@import '../../../../DropdownButton/style/theme/default/index.scss';
+
+.#{$ZIPPY_BUTTON_GROUP_ROOT_CLASS}.#{$ZIPPY_BUTTON_GROUP_ROOT_CLASS}--theme-#{$ZIPPY_BUTTON_GROUP_THEME_NAME}
+&:not(.#{$ZIPPY_BUTTON_GROUP_ROOT_CLASS}.#{$ZIPPY_BUTTON_GROUP_ROOT_CLASS}--rtl) {
+  .zippy-react-toolkit-button-group__button {
+    &:not(:first-child) {
+      border-left: 1px solid $ZIPPY_BUTTON_GROUP_SEPARATOR_COLOR !important;
+    }
+
+    &:first-child {
+      border-left: 0 !important;
+    }
+
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+
+    &.zippy-react-toolkit-button--pressed,
+    &.zippy-react-toolkit-split-button--pressed,
+    &.zippy-react-toolkit-dropdown-button--pressed {
+      background: $ZIPPY_BUTTON_GROUP_PRESSED_BG_COLOR !important;
+    }
+
+    &.zippy-react-toolkit-button,
+    &.zippy-react-toolkit-split-button,
+    &.zippy-react-toolkit-dropdown-button {
+      border-right: 0 !important;
+
+      &.zippy-react-toolkit-button--pressed,
+      &.zippy-react-toolkit-split-button--pressed,
+      &.zippy-react-toolkit-dropdown-button--pressed,
+      &:hover {
+        &:not(:first-child) {
+          border-left: 1px solid $ZIPPY_BUTTON_GROUP_HOVER_SEPARATOR_COLOR !important;
+        }
+
+        & + .zippy-react-toolkit-button-group__button:not(:first-child) {
+          border-left: 1px solid $ZIPPY_BUTTON_GROUP_HOVER_SEPARATOR_COLOR !important;
+        }
+      }
+    }
+  }
+}
+
+.#{$ZIPPY_BUTTON_GROUP_ROOT_CLASS}.#{$ZIPPY_BUTTON_GROUP_ROOT_CLASS}--rtl {
+  .zippy-react-toolkit-button-group__button {
+    &:not(:last-child) {
+      border-left: 1px solid $ZIPPY_BUTTON_GROUP_SEPARATOR_COLOR !important;
+    }
+
+    &:last-child {
+      border-left: 0 !important;
+    }
+
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+
+    &.zippy-react-toolkit-button,
+    &.zippy-react-toolkit-split-button,
+    &.zippy-react-toolkit-dropdown-button {
+      border-right: 0 !important;
+
+      &.zippy-react-toolkit-button--pressed,
+      &.zippy-react-toolkit-split-button--pressed,
+      &.zippy-react-toolkit-dropdown-button--pressed,
+      &:hover {
+        & + .zippy-react-toolkit-button-group__button:not(:last-child) {
+          border-left: 1px solid $ZIPPY_BUTTON_GROUP_HOVER_SEPARATOR_COLOR !important;
+        }
+
+        &:not(:last-child) {
+          border-left: 1px solid $ZIPPY_BUTTON_GROUP_HOVER_SEPARATOR_COLOR !important;
+        }
+      }
+    }
+  }
+}

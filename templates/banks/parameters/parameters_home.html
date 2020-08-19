@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    {% for param in parameters %}
+        <div class="container">
+            <div class="article-metadata">
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'parameters_update' param.id %}">Update</a>
+                </div>
+            </div>
+                <p class="article-content"></p>
+                <a> {{ param.ReservePercent }}</a>
+                <p></p>
+                <a>Number of Cycles: {{ param.NumberCycles }}</a>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                   <a class="ml-2" href="{%  url 'banks_home' %}">Return</a>
+                </small>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

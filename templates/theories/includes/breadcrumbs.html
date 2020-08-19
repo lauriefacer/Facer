@@ -1,0 +1,15 @@
+<script type="text/javascript">
+        $('.prev').click(function(){
+        ref=location.href;
+        $.ajax(
+        {
+            type:"POST",
+            url: "/facer/theories/breadcrumbs/",
+            success: function( data )
+            {
+                $( '#message' ).text(data);
+                window.location.assign(data.success);
+            }
+         })
+    });
+</script>

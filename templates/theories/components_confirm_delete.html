@@ -1,0 +1,19 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="content-section">
+            <form method ="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Delete Component Link</legend>
+                </fieldset>
+                <h5>Are you sure you want to delete component '{{ object.component_name }}' from concept '{{ object.concept_name }}'?</h5>
+                <div class="form-group">
+                    <button class="btn btn-outline-danger" type="submit">Confirm</button>
+                    <a class="btn btn-outline-secondary"href="{% url 'components_detail' object.concept_id object.theory %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

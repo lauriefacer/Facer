@@ -1,0 +1,103 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS} {
+  box-sizing: border-box;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  position: relative;
+  overflow: visible;
+  vertical-align: middle;
+
+  & > .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__picker {
+    min-width: 100%;
+    position: absolute;
+    z-index: 100;
+    left: -1px;
+    background: white;
+  }
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--picker-position-bottom
+> .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__picker {
+  top: 100%;
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--picker-position-top
+> .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__picker {
+  bottom: 100%;
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__input {
+  width: 100%;
+  flex: 1 1 auto;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon {
+  border: 3px solid gray;
+  border-top-width: 5px;
+  border-radius: 2px;
+  padding: 5px 7px;
+  margin: 2px 4px 0 2px;
+  position: relative;
+}
+
+$hoverColor: darken(gray, 20%);
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__clear-icon {
+  color: gray;
+  fill: gray;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  svg {
+    vertical-align: middle;
+  }
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__clear-icon:hover {
+  color: $hoverColor;
+  fill: $hoverColor;
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:after,
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:before {
+  content: '';
+  width: 3px;
+  height: 6px;
+  border-radius: 10px;
+  left: 1px;
+  top: -6px;
+  position: absolute;
+  background: gray;
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:after {
+  left: auto;
+  right: 0;
+}
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon-inner {
+  background: gray;
+  position: absolute;
+  border-radius: 1px;
+  top: 2px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+}

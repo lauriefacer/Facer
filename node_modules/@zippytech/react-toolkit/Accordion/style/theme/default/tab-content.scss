@@ -1,0 +1,23 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+@import './variables.scss';
+
+.#{$ZIPPY_ACCORDION_ROOT_CLASS}--theme-#{$ZIPPY_ACCORDION_THEME_NAME} {
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-content {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-content__content-wrapper {
+    padding: $ZIPPY_ACCORDION_TAB_CONTENT_PADDING;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-content {
+    background: white;
+  }
+}

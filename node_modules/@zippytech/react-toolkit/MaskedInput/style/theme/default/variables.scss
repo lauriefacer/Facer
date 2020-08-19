@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables';
+
+$ZIPPY_MASKED_INPUT_THEME_NAME: 'default' !default;
+$ZIPPY_MASKED_INPUT_COLOR: #525252 !default;
+$ZIPPY_MASKET_INPUT_WHITE_BG: white !default;
+$ZIPPY_MASKED_INPUT_BORDER: 1px solid #c5c5c5 !default;
+$ZIPPY_MASKED_INPUT_BORDER_HOVER: 1px solid #a1b6d3 !default;
+$ZIPPY_MASKED_INPUT_BORDER_FOCUS: 1px solid #a1b6d3 !default;
+$ZIPPY_MASKED_INPUT_BOX_SHADOW: 0 0 2px 0 #a1b6d3 !default;
+$ZIPPY_MASKET_INPUT_CLEAR_BUTTON_FILL: #495e85 !default;
+$ZIPPY_MASKET_INPUT_FONT_SIZE: 14px !default;

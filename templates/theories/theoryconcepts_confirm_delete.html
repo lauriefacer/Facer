@@ -1,0 +1,19 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="content-section">
+            <form method ="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Delete Concept Link</legend>
+                </fieldset>
+                <h5>Are you sure you want to delete concept '{{ object.concept_name }}' from theory '{{ object.theory_name }}'?</h5>
+                <div class="form-group">
+                    <button class="btn btn-outline-danger" type="submit">Confirm</button>
+                    <a class="btn btn-outline-secondary"href="{% url 'theories_detail' object.theory_id %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

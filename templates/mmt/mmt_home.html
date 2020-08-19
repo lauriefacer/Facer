@@ -1,0 +1,10 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1>MMT</h1>
+            <a>Hello {{ user.username }} welcome to MMT Project</a>
+    <p></p>
+    <a href="{% url 'banks_home' %}">Banks</a>
+    </div>
+{%  endblock  %}

@@ -1,0 +1,28 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+$ZIPPY-UPLOADER-THEME_NAME: 'default' !default;
+
+$border_color: #a1b6d3;
+$background-color: #d2dff0;
+$select-files-bg-color: #73b23d;
+$select-files-txt-color: #73b23d;
+$button-bg-color: #495e85;
+$button-hover-bg-color: #3c5c99;
+$drop-hover-color: rgba(73, 94, 133, 0.5);
+$button-text-color: #e9ecf0;
+$button-disabled-text-color: rgba(233, 236, 240, 0.5);
+$secondary-label-text-color: rgba(82, 82, 82, 0.7);
+$file-bg-color: #fff;
+$file-hover-bg-color: #fff0d9;
+$file-border-color: #c5c5c5;
+$progress-bar-active-color: #5c8eeb;
+$progress-bar-remaining-color: rgba(92, 142, 235, 0.3);
+$uploading-button-color: #5c8eeb;
+$uploaded-button-color: #73b23d;
+$queued-button-color: #858585;

@@ -1,0 +1,42 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="draw">
+        {% for object in object_list %}
+            {% if forloop.first %}
+                <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'components_detail'  object.concept_id object.theory_id  %}">Return</a>
+                <h4>Link component to concept {{ object.concept_name }}</h4>
+                <p></p>
+            {% endif %}
+            <a class="btn btn-secondary btn-sm mt-1 mb-1 likebutton"
+                    data-concept="{{ object.concept_id }}"
+                    data-component="{{ object.component_id }}" href="">Link</a>
+            <strong>{{ object.component_name }}</strong>
+            <a>{{ object.component_description }}</a>
+            <p></p>
+        {% endfor %}
+    </div>
+    {% include 'theories\includes\paging.html' %}
+    <script type="text/javascript">
+        $('.likebutton').click(function(){
+        var concept_id;
+        concept_id = $(this).attr("data-concept");
+        var component_id;
+        component_id = $(this).attr("data-component");
+        ref=location.href;
+        $.ajax(
+        {
+            type:"POST",
+            data:{concept_id: concept_id, component_id: component_id},
+            url: "../link_concept_component_create/",
+            success: function( data )
+            {
+                $( '#like'+ concept_id ).remove();
+                $( '#like'+ theory_id ).remove();
+                $( '#message' ).text(data);
+                location.reload();
+            }
+         })
+    });
+    </script>
+{% endblock %}

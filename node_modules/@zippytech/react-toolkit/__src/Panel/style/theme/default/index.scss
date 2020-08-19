@@ -1,0 +1,62 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_PANEL_ROOT_CLASS}.#{$ZIPPY_PANEL_ROOT_CLASS}--theme-#{$ZIPPY_PANEL_THEME_NAME} {
+  &.#{$ZIPPY_PANEL_ROOT_CLASS} {
+    border: $ZIPPY_PANEL_BORDER;
+    background: #fff;
+  }
+
+  .#{$ZIPPY_PANEL_ROOT_CLASS}__body {
+    &--scrollable {
+      font-size: $ZIPPY_PANEL_FONT_SIZE;
+    }
+  }
+
+  .#{$ZIPPY_PANEL_ROOT_CLASS}__footer {
+    border-top: $ZIPPY_PANEL_BORDER;
+  }
+
+  .#{$ZIPPY_PANEL_ROOT_CLASS}__title-bar {
+    color: $ZIPPY_PANEL_TITLE_COLOR;
+    fill: $ZIPPY_PANEL_TITLE_COLOR;
+    background: $ZIPPY_PANEL_TITLE_BAR_BACKGROUND;
+    min-height: $ZIPPY_PANEL_TITLE_BAR_MIN_HEIGHT;
+    font-size: $ZIPPY_PANEL_FONT_SIZE;
+  }
+
+  .#{$ZIPPY_PANEL_ROOT_CLASS}__title-bar-border-bottom {
+    border-bottom: $ZIPPY_PANEL_BORDER_BOTTOM;
+  }
+
+  .#{$ZIPPY_PANEL_ROOT_CLASS}__title-bar-border-top {
+    border-top: $ZIPPY_PANEL_BORDER_BOTTOM;
+  }
+
+  .#{$ZIPPY_PANEL_ROOT_CLASS}__title {
+    font-weight: $ZIPPY_PANEL_TITLE_FONT_WEIGHT;
+    padding: $ZIPPY_PANEL_TITLE_PADDING;
+
+    svg {
+      vertical-align: middle;
+      margin-right: $ZIPPY_PANEL_TITLE_SVG_MARGIN;
+    }
+  }
+
+  &.#{$ZIPPY_PANEL_ROOT_CLASS}--rtl {
+    .#{$ZIPPY_PANEL_ROOT_CLASS}__title {
+      padding: $ZIPPY_PANEL_TITLE_PADDING;
+
+      svg {
+        margin-left: $ZIPPY_PANEL_TITLE_SVG_MARGIN;
+        margin-right: 0;
+      }
+    }
+  }
+}

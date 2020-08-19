@@ -1,0 +1,20 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$ZIPPY_TOOLTIP_THEME_NAME: 'default' !default;
+$ZIPPY_TOOLTIP_FONT_SIZE: 13px !default;
+$ZIPPY_TOOLTIP_FONT_COLOR: #e9ecf0 !default;
+
+$ZIPPY_TOOLTIP_PADDING: 6px 8px !default;
+$ZIPPY_TOOLTIP_ARROW_WIDTH: 11px !default;
+$ZIPPY_TOOLTIP_ARROW_HEIGHT: 7px !default;
+
+$ZIPPY_TOOLTIP_BACKGROUND: rgba(73, 94, 133, 0.9) !default;
+$ZIPPY_TOOLTIP_BORDER_RADIUS: 0 !default;
+$ZIPPY_TOOLTIP_BORDER: none !default;

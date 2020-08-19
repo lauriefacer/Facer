@@ -1,0 +1,34 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$ZIPPY_COMBO_BOX_THEME_NAME: 'default' !default;
+
+$ZIPPY_COMBO_BOX_FONT_SIZE: 14px !default;
+$ZIPPY_COMBO_BOX_COLOR: #525252 !default;
+$ZIPPY_COMBO_BOX_BORDER_COLOR: #c5c5c5 !default;
+$ZIPPY_COMBO_BOX_FOCUSED_BORDER_COLOR: #a1b6d3 !default;
+$ZIPPY_COMBO_BOX_HOVER_BORDER_COLOR: #a1b6d3 !default;
+$ZIPPY_COMBO_BOX_LIST_BORDER_COLOR: #a1b6d3 !default;
+
+$ZIPPY_COMBO_BOX_ICON_FILL_COLOR: #495e85 !default;
+$ZIPPY_COMBO_BOX_MAIN_COLOR: #1565c0 !default;
+$ZIPPY_COMBO_BOX_SECONDARY_COLOR: #e3f2fd !default;
+
+$ZIPPY_COMBO_BOX_SELECTED_ITEM_BACKGROUND: #e8f2ff !default;
+$ZIPPY_COMBO_BOX_TAG_BACKGROUND: #e8f2ff !default;
+
+$ZIPPY_COMBO_BOX_ACTIVE_TAG_BORDER: 1px dotted #a1b6d3 !default;
+$ZIPPY_COMBO_BOX_ACTIVE_ITEM_BORDER: 1px dotted #a1b6d3 !default;
+$ZIPPY_COMBO_BOX_HOVERED_BORDER: 1px solid $ZIPPY_COMBO_BOX_HOVER_BORDER_COLOR !default;
+$ZIPPY_COMBO_BOX_BOX_SHADOW: 0 0 2px 0 $ZIPPY_COMBO_BOX_FOCUSED_BORDER_COLOR !default;
+
+$ZIPPY_COMBO_BOX_HOVER_ITEM_BACKGROUND: #fff0d9 !default;
+$ZIPPY_COMBO_BOX_ACTIVE_ITEM_COLOR: white !default;
+
+$ZIPPY_COMBO_BOX_HEIGHT: 28px !default;

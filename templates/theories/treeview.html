@@ -1,0 +1,109 @@
+
+{%  extends 'base.html' %}
+{% block body %}
+<a class="btn btn-primary btn-sm mt-1 mb-1 prev" href="#">Prev</a>
+<ul id="myUL">
+    {% for object in object_list %}
+        {% if forloop.first %}
+            <li><span class="caret">{{ object.theory }}</span>
+                <ul class="nested">
+        {% endif %}
+        {% for x in object_list %}
+            {% if forloop.counter < object.level %}
+                </ul>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if object.action > 0 %}
+            <li><span class="caret">
+                        <span class="myDiv">
+                            <a href="{% url 'components_detail' object.concept_id object.theory_id %}">{{ object.concept }}</a></span>
+                        <span class="hide">{{ object.concept_description }}</span>
+                    </span>
+                <ul class="nested">
+        {% endif %}
+        {% if object.action == 0 %}
+            <li class="myDiv"><a href="{% url 'components_detail' object.concept_id object.theory_id %}">
+                &#9724; {{ object.concept }}</a></li>
+            <li class="hide">{{ object.concept_description }}</li>
+        {% endif %}
+        {% if forloop.last %}
+            </ul>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<style>
+    /* Remove default bullets */
+    ul, #myUL {
+      list-style-type: none;
+    }
+
+    /* Remove margins and padding from the parent ul */
+    #myUL {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Style the caret/arrow */
+    .caret {
+      cursor: pointer;
+      user-select: none; /* Prevent text selection */
+    }
+
+    /* Create the caret/arrow with a unicode, and style it */
+    .caret::before {
+      content: "\25B6";
+      color: black;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+    .caret-down::before {
+      transform: rotate(90deg);}
+
+    /* Hide the nested list */
+    .nested {
+      display: none;
+    }
+
+    /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+    .active {
+      display: block;
+    }
+
+    .body {
+      background: #fafafa;
+      color: #333333;
+      margin-left: -300px;
+    }
+</style>
+
+<script type="text/javascript">
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function() {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+      });
+    }
+</script>
+<script type="text/javascript">
+        $('.prev').click(function(){
+        ref=location.href;
+        $.ajax(
+        {
+            type:"POST",
+            url: "/facer/theories/breadcrumbs/",
+            success: function( data )
+            {
+                $( '#message' ).text(data);
+                window.location.assign(data.success);
+            }
+         })
+    });
+</script>
+{% endblock %}

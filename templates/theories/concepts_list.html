@@ -1,0 +1,42 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <h3>Concepts</h3>
+        <p></p>
+        <a class="btn btn-primary btn-sm mt-1 mb-1 prev"
+                           href="#">Prev</a>
+        <a class="btn btn-primary btn-sm mt-1 mb-1"
+                           href=" {%  url 'theories_home' %}">Return</a>
+        <body>
+            <div style="overflow-x:auto;">
+                <table id="banks" tr>
+                      <tr>
+                        <th width="10%"></th>
+                        <th width="25%">Concept</th>
+                        <th width="65%">Description</th>
+                      </tr>
+                    {% for concept in object_list %}
+                      <tr>
+                        <td>
+                            <a class="btn btn-danger btn-sm mt-1 mb-1"
+                                    href="{% url 'concept_delete' pk=concept.id %}">Delete</a>
+                        </td>
+                        <td>
+                          <a href="{% url 'concept_referenced' concept.id %}"> {{ concept.concept }}</a>
+                        </td>
+                        <td>
+                            <a class="myDiv">{{ concept.concept_description }}</a>
+                            <a class="hide"> {{ concept.description_long }}</a>
+                        </td>
+                      </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </body>
+    </div>
+    {% include 'theories\includes\paging.html' %}
+    {% include 'theories\includes\breadcrumbs.html' %}
+
+{% endblock %}

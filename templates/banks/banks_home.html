@@ -1,0 +1,59 @@
+{%  extends 'base.html' %}
+
+<head>
+    <style>
+        #banks {
+          font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        #banks td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #banks tr:nth-child(even){background-color: #f2f2f2;}
+        #banks tr:hover {background-color: #ddd;}
+
+        #banks th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #4CAF50;
+          color: white;
+        }
+        </style>
+</head>
+
+{% block body %}
+    <div class="container">
+        <h1>Banks</h1>
+        <body>
+            <div style="overflow-x:auto;">
+                <table id="banks" tr>
+                      <tr>
+                        <th width="20%">Bank Code</th>
+                        <th width="40%">Bank Name</th>
+                        <th width="10%">RBA</th>
+                          <th width="15%">Deposits</th>
+                          <th width="15%">Loans</th>
+                      </tr>
+                    {% for bank in banks %}
+                      <tr>
+                        <td>
+                          <a class="article-title" href=" {%  url 'banks_detail' bank.id%}">{{ bank.BankCode }}</a>
+                        </td>
+                        <td>{{ bank.BankName }}</td>
+                        <td>{{ bank.CentralBankFlag }}</td>
+                          <td>{{ bank.Deposits }}</td>
+                          <td>{{ bank.Loans }}</td>
+                        <td style="text-align:right">{{ bank.ReservePercent }}</td>
+                      </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </body>
+    </div>
+{% endblock %}

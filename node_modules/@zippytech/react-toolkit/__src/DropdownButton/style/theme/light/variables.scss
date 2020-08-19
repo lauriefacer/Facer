@@ -1,0 +1,19 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+$ZIPPY_DROPDOWN_BUTTON_THEME_NAME: 'light';
+$ZIPPY_DROPDOWN_BUTTON_BG_COLOR: #e4e7ed;
+$ZIPPY_DROPDOWN_BUTTON_HOVER_BG_COLOR: lighten(
+  $ZIPPY_DROPDOWN_BUTTON_BG_COLOR,
+  3%
+);
+$ZIPPY_DROPDOWN_BUTTON_UNFOCUSED_BORDER: 1px solid transparent;
+$ZIPPY_DROPDOWN_BUTTON_FOCUSED_BORDER: 1px dotted #3c5c99;
+
+$ZIPPY_DROPDOWN_BUTTON_COLOR: #495e85;
+$ZIPPY_DROPDOWN_BUTTON_FILL: $ZIPPY_DROPDOWN_BUTTON_COLOR;
+$ZIPPY_DROPDOWN_BUTTON_FONT_SIZE: 14px;

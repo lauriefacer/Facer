@@ -1,0 +1,212 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS} {
+  &,
+  &:before,
+  &:after,
+  & *,
+  & *:before,
+  & *:after {
+    box-sizing: border-box;
+  }
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  font-family: inherit;
+  user-select: none;
+  text-align: start;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row;
+  border: none;
+  align-items: center;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+button.#{$ZIPPY_BUTTON_ROOT_CLASS} {
+  padding: 0;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+  flex: 1 0 0%;
+  // the rule is for IE10 / IE11
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    flex: 1 0 auto;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}__icon-wrap {
+  display: flex;
+  flex-flow: row;
+}
+
+// states
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--over {
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--disabled {
+  cursor: default;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--active {
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--overflow-visible {
+  overflow: visible;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--overflow-hidden {
+  overflow: hidden;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--ellipsis {
+  &,
+  // when ellipsis and wrap: true, make ellipsis win
+  &.#{$ZIPPY_BUTTON_ROOT_CLASS}--wrap,
+  &.#{$ZIPPY_BUTTON_ROOT_CLASS}--wrap .#{$ZIPPY_BUTTON_ROOT_CLASS}__text,
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--nowrap {
+  &,
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    white-space: nowrap;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--wrap {
+  &,
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    white-space: normal;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--pressed {
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--over {
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--focus {
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--rtl {
+  direction: rtl;
+}
+
+// align
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-center {
+  justify-content: center;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    text-align: center;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-start:not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top):not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom) {
+  justify-content: flex-start;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    text-align: start;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-start.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-start.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom {
+  align-items: flex-start;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    text-align: start;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-end:not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top):not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom) {
+  justify-content: flex-end;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    text-align: end;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-end.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-end.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom {
+  align-items: flex-end;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    text-align: end;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-left {
+  justify-content: flex-start;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    text-align: left;
+  }
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--align-right {
+  justify-content: flex-end;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    text-align: right;
+  }
+}
+
+// vertical-align
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-middle:not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top):not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom),
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-center:not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top):not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom) {
+  align-items: center;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-middle.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-middle.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-center.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-center.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom {
+  justify-content: center;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-top:not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top):not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom) {
+  align-items: flex-start;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-top.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-top.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom {
+  justify-content: flex-start;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-bottom:not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top):not(.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom) {
+  align-items: flex-end;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-bottom.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--vertical-align-bottom.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom {
+  justify-content: flex-end;
+}
+
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-top,
+.#{$ZIPPY_BUTTON_ROOT_CLASS}--icon-position-bottom {
+  display: inline-flex;
+  flex-direction: column;
+
+  .#{$ZIPPY_BUTTON_ROOT_CLASS}__text {
+    flex: none;
+  }
+}

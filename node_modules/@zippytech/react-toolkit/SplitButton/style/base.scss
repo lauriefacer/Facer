@@ -1,0 +1,26 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+@import '../../DropdownButton/style/base.scss';
+@import '../../Button/style/base.scss';
+
+.#{$ZIPPY_SPLIT_BUTTON_ROOT_CLASS} {
+  display: inline-flex;
+  text-align: start;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+.#{$ZIPPY_SPLIT_BUTTON_ROOT_CLASS}__dropdown-button
+.zippy-react-toolkit-button__text {
+  display: none;
+}
+
+.#{$ZIPPY_SPLIT_BUTTON_ROOT_CLASS}--rtl {
+  direction: rtl;
+}

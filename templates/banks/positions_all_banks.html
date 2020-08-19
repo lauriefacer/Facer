@@ -1,0 +1,43 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+    <div id="style=" overflow-x:auto;>
+            <table id="Positions">
+        <tr>
+            <th width="5%">Cycle</th>
+            <th width="20%" style="text-align:right">Deposits</th>
+            <th width="20%" style="text-align:right">Loans</th>
+            <th width="20%" style="text-align:right">Loan Deficit</th>
+            <th width="20%" style="text-align:right">Loan Surplus</th>
+        </tr>
+        {% for object in object_list %}
+            {% if object.CycleNumber == 1 %}
+                <tr>
+                    <td><h6>{{ object.Bank.BankCode }}</h6></td>
+                </tr>
+                <tr>
+                <td>{{ object.CycleNumber }}</td>
+                <td style="text-align:right" >{{ object.Deposits }}</td>
+                <td style="text-align:right">{{ object.Loans }}</td>
+                <td style="text-align:right">{{ object.LoanDeficit }}</td>
+                <td style="text-align:right" >{{ object.LoanSurplus }}</td>
+              </tr>
+            {% else %}
+                <tr>
+                    <td> {{ object.CycleNumber }}</td>
+                    <td style="text-align:right" >{{ object.Deposits }}</td>
+                    <td style="text-align:right">{{ object.Loans }}</td>
+                    <td style="text-align:right">{{ object.LoanDeficit }}</td>
+                    <td style="text-align:right" >{{ object.LoanSurplus }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    </div>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+               <a class="ml-2" href="{%  url 'banks_home' %}">Return</a>
+            </small>
+        </div>
+{% endblock %}

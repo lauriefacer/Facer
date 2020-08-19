@@ -1,0 +1,43 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.#{$ZIPPY_CALENDAR_ROOT_CLASS}__calendar--theme-#{$ZIPPY_CALENDAR_THEME_NAME} {
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__calendar--theme-#{$ZIPPY_CALENDAR_THEME_NAME} {
+    border: none;
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock {
+    margin: 8px 14px 8px 8px;
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock-input {
+    margin-left: 4px;
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock-input-spinner {
+    border: 1px solid #c5c5c5;
+    margin-right: 14px;
+    cursor: pointer;
+
+    &:hover {
+      margin-right: 14px;
+    }
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock-input-spinner--focused {
+    border: 1px solid #9b9b9b;
+    margin-right: 14px;
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock-input-spinner-arrow {
+    fill: $ZIPPY_CALENDAR_MAIN_COLOR;
+
+    &--disabled {
+      fill: rgba(#495e85, 0.5);
+    }
+  }
+}

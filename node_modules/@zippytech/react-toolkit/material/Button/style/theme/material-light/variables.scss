@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$ZIPPY_MATERIAL_BUTTON_THEME_NAME: 'material-light' !default;
+
+:root {
+  --zippy-react-toolkit-material-button__background: #6200ee;
+  --zippy-react-toolkit-material-button--flat__background: transparent;
+  --zippy-react-toolkit-material-button--flat__color: #6200ee;
+  --zippy-react-toolkit-material-button--raised__background: #6200ee;
+  --zippy-react-toolkit-material-button--raised__color: #fff;
+  --zippy-react-toolkit-material-button--unelevated__background: #6200ee;
+  --zippy-react-toolkit-material-button--unelevated__color: #fff;
+  --zippy-react-toolkit-material-button--outlined__background: transparent;
+  --zippy-react-toolkit-material-button--outlined__color: #6200ee;
+}

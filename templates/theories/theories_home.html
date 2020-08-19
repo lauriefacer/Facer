@@ -1,0 +1,54 @@
+{%  extends 'base.html' %}
+
+<head>
+    <style>
+        #banks {
+          font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        #banks td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #banks tr:nth-child(even){background-color: #f2f2f2;}
+        #banks tr:hover {background-color: #ddd;}
+
+        #banks th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #4CAF50;
+          color: white;
+        }
+    </style>
+</head>
+
+{% block body %}
+    <div class="container">
+        <h3>Theories</h3>
+        <body>
+            <div style="overflow-x:auto;">
+                <table id="banks" tr>
+                      <tr>
+                        <th width="20%">Theory</th>
+                        <th width="80%">Description</th>
+                      </tr>
+                    {% for theory in object_list %}
+                      <tr>
+                        <td>
+                          <a class="article-title" href="{%  url 'theories_detail' theory.id%}">{{ theory.theory }}</a>
+                        </td>
+                          <td>
+                            <a class="myDiv">{{ theory.description_short }}</a>
+                            <a class="hide">{{ theory.description_long }}</a>
+                          </td>
+                      </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </body>
+    </div>
+{% endblock %}

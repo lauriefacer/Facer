@@ -1,0 +1,64 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+@import '../../ToolBar/style/index.scss';
+@import '../../NumericInput/style/index.scss';
+@import '../../ComboBox/style/index.scss';
+@import '../../Button/style/index.scss';
+
+.#{$ZIPPY_PAGINATION_TOOLBAR_ROOT_CLASS} {
+  box-sizing: border-box;
+  align-items: center;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  &__region {
+    display: flex;
+    align-items: center;
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__region {
+    white-space: nowrap;
+  }
+}
+
+.#{$ZIPPY_PAGINATION_TOOLBAR_ROOT_CLASS}__page-text {
+  margin-left: 6px;
+}
+
+.#{$ZIPPY_PAGINATION_TOOLBAR_ROOT_CLASS}__per-page-text {
+  margin-left: 2px;
+}
+
+.#{$ZIPPY_PAGINATION_TOOLBAR_ROOT_CLASS}__page-count-text {
+  text-align: right;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.#{$ZIPPY_PAGINATION_TOOLBAR_ROOT_CLASS}__page-size-combo {
+  display: inline-flex;
+}
+
+.#{$ZIPPY_PAGINATION_TOOLBAR_ROOT_CLASS}__current-page {
+  align-self: stretch;
+}
+
+.#{$ZIPPY_PAGINATION_TOOLBAR_ROOT_CLASS}__icon {
+  vertical-align: middle;
+  fill: gray;
+  outline: none;
+}

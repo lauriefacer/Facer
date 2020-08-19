@@ -1,0 +1,29 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_TEXT_AREA_ROOT_CLASS} {
+  box-sizing: border-box;
+  text-align: start;
+  direction: ltr;
+  overflow: auto;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--rtl {
+    direction: rtl;
+  }
+}

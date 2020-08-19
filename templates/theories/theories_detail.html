@@ -1,0 +1,43 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="draw">
+        {% for object in object_list %}
+            {% if forloop.first %}
+                <div class="article-metadata">
+                    <div>
+                        <a class="btn btn-primary btn-sm mt-1 mb-1 prev" href="#">Prev</a>
+                        <a class="btn btn-primary btn-sm mt-1 mb-1"
+                           href=" {%  url 'theories_home' %} ">Return</a>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1"
+                           href=" {% url 'theories_update' object.id %}">Modify</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1"
+                           href=" {%  url 'theories_delete' object.id%}">Delete</a>
+                        <a class="btn btn-primary btn-sm mt-1 mb-1"
+                           href=" {%  url 'treeview' object.id %}">Map</a>
+                    </div>
+                </div>
+                <h4>{{ object.theory }}</h4>
+                <p></p>
+                <a> {{ object.theory_description }}</a>
+                <p></p>
+                <a class="btn btn-outline-info btn-sm mt-1 mb-1"
+                   href="{% url 'theory_concept' object.id %}">New Concept</a>
+                <a class="btn btn-outline-info btn-sm mt-1 mb-1"
+                   href=" {% url 'link_concepts' object.id %}">Link Concept</a>
+                <h5>Concepts</h5>
+                <p></p>
+            {% endif %}
+            {% if object.concept %}
+
+                <a class="btn btn-danger btn-sm mt-1 mb-1"
+                   href="{% url 'concept_link_delete' pk=object.concept_id theory=object.pk  %}">Delete</a>
+                <a href="{% url 'components_detail' object.concept_id object.pk %}"> {{ object.concept }}</a>
+                <a class="myDIV">{{ object.concept_description_short }}</a>
+                <a class="hide">{{ object.concept_description_long }}</a>
+                <P></P>
+            {% endif %}
+        {% endfor %}
+    </div>
+        {% include 'theories\includes\breadcrumbs.html' %}
+{% endblock %}

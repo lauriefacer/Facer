@@ -1,0 +1,72 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+@import './variables.scss';
+
+.#{$ZIPPY_NOTIFICATION_ROOT_CLASS}.#{$ZIPPY_NOTIFICATION_ROOT_CLASS}--theme-#{$ZIPPY_NOTIFICATION_THEME_NAME} {
+  font-size: $ZIPPY_NOTIFICATION_FONT_SIZE;
+  background: $ZIPPY_NOTIFICATION_BACKGROUND;
+  color: $ZIPPY_NOTIFICATION_SECONDARY_COLOR;
+  overflow: hidden;
+  min-height: 110px;
+  min-width: 300px;
+  max-width: 80vw;
+  max-height: 50vh;
+
+  .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__header {
+    font-weight: $ZIPPY_NOTIFICATION_HEADER_FONT_WEIGHT;
+    font-size: $ZIPPY_NOTIFICATION_HEADER_FONT_SIZE;
+    padding: $ZIPPY_NOTIFICATION_HEADER_PADDING;
+  }
+
+  .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__pin-button,
+  .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__close-button {
+    user-select: none;
+    fill: $ZIPPY_NOTIFICATION_SECONDARY_COLOR;
+    padding: 1px;
+    border-radius: 2px;
+
+    &:hover {
+      fill: $ZIPPY_NOTIFICATION_SECONDARY_COLOR;
+    }
+
+    svg {
+      // we need pointer-events none because on FF and Safari, because of the transition moving the svg down 1px
+      // the svg does not trigger/propagate the click event correctly
+      pointer-events: none;
+    }
+
+    &:active {
+      svg {
+        transform: translateY(1px);
+      }
+    }
+  }
+
+  &.#{$ZIPPY_NOTIFICATION_ROOT_CLASS}--rtl {
+    .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__title {
+      margin-left: $ZIPPY_NOTIFICATION_TITLE_MARGIN;
+    }
+
+    .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__pin-button,
+    .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__close-button {
+      margin-right: $ZIPPY_NOTIFICATION_BUTTON_MARGIN;
+    }
+  }
+
+  &:not(.#{$ZIPPY_NOTIFICATION_ROOT_CLASS}--rtl) {
+    .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__title {
+      margin-right: $ZIPPY_NOTIFICATION_TITLE_MARGIN;
+    }
+
+    .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__pin-button,
+    .#{$ZIPPY_NOTIFICATION_ROOT_CLASS}__close-button {
+      margin-left: $ZIPPY_NOTIFICATION_BUTTON_MARGIN;
+    }
+  }
+}

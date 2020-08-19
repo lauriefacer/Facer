@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock--theme-#{$ZIPPY_CALENDAR_THEME_NAME} {
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock-hand-second {
+    background: red;
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock-center {
+    background: lighten(gray, 40%);
+  }
+
+  .#{$ZIPPY_CALENDAR_ROOT_CLASS}__clock-overlay {
+    background: white;
+    border-style: solid;
+    border-color: gray;
+  }
+}

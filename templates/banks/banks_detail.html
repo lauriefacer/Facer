@@ -1,0 +1,116 @@
+{%  extends 'base.html' %}
+{% load prices %}
+
+{% block body %}
+    <div class="container">
+        {% for object in object_list %}
+            {% if object.cyclenumber == 1 %}
+            <div class="article-metadata">
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href=" {% url 'banks_update' object.id %}">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href=" {%  url 'banks_delete' object.id%}">Delete</a>
+                </div>
+            </div>
+                <h2><a class="article-title" href="#">{{ object.BankCode }}</a></h2>
+                <p class="article-content">{{ object.content }}</p>
+                <a>Bank Name: {{ object.BankName }}</a>
+                <p></p>
+                <a>Central Bank: {{ object.CentralBankFlag }}</a>
+                <p></p>
+                <a>Deposits: {{ object.Deposits }}</a>
+                <p></p>
+                <a>Loans: {{ object.Loans }}</a>
+                <p></p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div style="overflow-x:auto;">
+        <p>To change Cycle values double click value, enter value and press Enter</p>
+        <table id="Cycles" tr>
+              <tr>
+                <th width="5%">Cycle</th>
+                <th width="20%" style="text-align:right">Deposit Change</th>
+                <th width="20%" style="text-align:right">Loan Change</th>
+              </tr>
+              <tr>
+            {% for cycle in object_list %}
+                <td><a class="article-title">{{ cycle.cyclenumber }}</a></td>
+                <td class="editable" data-id="{{ cycle.cycle_id }}" data-type="depositchange" style="text-align:right">{{ cycle.depositchange }}</td>
+                <td class="editable" data-id="{{ cycle.cycle_id }}" data-type="loanchange" style="text-align:right">{{ cycle.loanchange }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <p></p>
+    {% for object in object_list %}
+        {% if object.cyclenumber == 1 %}
+            <a class="likebutton" id="{{ object_id }}" href="#" data-catid="{{ object.id }}" >Calculate Positions</a>
+        {% endif %}
+    {% endfor %}
+    <script type="text/javascript">
+        $('.likebutton').click(function(){
+        var catid;
+        catid = $(this).attr("data-catid");
+        console.log(catid);
+        ref=location.href;
+        $.ajax(
+        {
+            type:"POST",
+            data:{id: catid},
+            url: "../calculate_positions/",
+            success: function( data )
+            {
+                $( '#like'+ catid ).remove();
+                $( '#message' ).text(data);
+                location.reload();
+            }
+         })
+    });
+    </script>
+    <p></p>
+    <p></p>
+
+    <div id="style="overflow-x:auto;">
+        <table id="Positions" tr>
+              <tr>
+                <th width="5%">Positions</th>
+                <th width="20%" style="text-align:right">Deposits</th>
+                <th width="20%" style="text-align:right">Loans</th>
+                <th width="20%" style="text-align:right">Loan Deficit</th>
+                <th width="20%" style="text-align:right">Loan Surplus</th>
+              </tr>
+            {% for position in object_list %}
+                <td>{{ position.cyclenumber }}</td>
+                <div id="money">
+                    <td class="amount" id="output" data-currency="{{ position.pos_deposits_currency }}"
+                            style="text-align:right" >{{ position.pos_deposits }}</td>
+                    <td class="amount" id="output" data-currency="{{ position.pos_deposits_currency }}"
+                            style="text-align:right">{{ position.pos_loans }}</td>
+                    <td class="amount" id="output" data-currency="{{ position.pos_deposits_currency }}"
+                            style="text-align:right">{{ position.LoanDeficit }}</td>
+                <td class="amount" id="output" data-currency="{{ position.pos_deposits_currency }}"
+                            style="text-align:right" >{{ position.pos_loansurplus }}</td>
+                </div>
+              </tr>
+            {% endfor %}
+        </table>
+    </div>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+               <a class="ml-2" href="{%  url 'banks_home' %}">Return</a>
+            </small>
+        </div>
+    <script>
+        var test = document.getElementById("output");
+        var y = document.getElementsByClassName("amount");
+        x = y.length;
+        for (var i = 0; i < x; i++) {
+            z = document.getElementsByClassName("amount").item(i);
+            curr = z.getAttribute("data-currency");
+            console.log("Currency: " + curr);
+            m=parseFloat(z.innerHTML)
+            z.innerHTML = Intl.NumberFormat('en-US', {style: 'currency', currency: curr, minimumFractionDigits: 0})
+            .format(m);
+        }
+    </script>
+{% endblock %}

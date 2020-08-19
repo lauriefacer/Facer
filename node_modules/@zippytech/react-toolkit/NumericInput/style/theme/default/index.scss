@@ -1,0 +1,71 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}.#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}--theme-#{$ZIPPY_NUMERIC_INPUT_THEME_NAME} {
+  font-size: $ZIPPY_NUMERIC_FONT_SIZE;
+  fill: $ZIPPY_NUMERIC_ICON_FILL;
+  border: $ZIPPY_NUMERIC_BORDER;
+  background: $ZIPPY_NUMERIC_INPUT_BG_COLOR;
+  padding: $ZIPPY_NUMERIC_INPUT_PADDING;
+  transition: all 0.2s;
+  min-height: 32px;
+
+  &:hover {
+    border: $ZIPPY_NUMERIC_BORDER_HOVER;
+  }
+
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__input {
+    color: $ZIPPY_NUMERIC_FONT_COLOR;
+    font-size: $ZIPPY_NUMERIC_FONT_SIZE;
+  }
+
+  &.#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}--disabled {
+    fill: $ZIPPY_NUMERIC_DISABLED_ICON_FILL;
+    opacity: 0.5;
+  }
+
+  &.#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}--focused {
+    border: $ZIPPY_NUMERIC_BORDER_FOCUSED;
+    box-shadow: $ZIPPY_NUMERIC_BOX_SHADOW;
+  }
+
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__clear-button:focus {
+    outline: 1px dotted #3c5c99;
+  }
+
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__spinner-wrapper {
+    margin: $ZIPPY_NUMERIC_SPINNER_MARGIN;
+    min-height: $ZIPPY_NUMERIC_INPUT_TOOL_DIMENSION;
+  }
+
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__spinner-wrapper-hidden {
+    margin: $ZIPPY_NUMERIC_SPINNER_MARGIN_HIDDEN;
+  }
+
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__input {
+    min-height: $ZIPPY_NUMERIC_INPUT_MIN_HEIGHT;
+    margin: $ZIPPY_NUMERIC_INPUT_MARGIN;
+  }
+
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__spinner-arrow {
+    svg {
+      transform: translateY(0);
+      pointer-events: none;
+    }
+  }
+
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__spinner-arrow--up,
+  .#{$ZIPPY_NUMERIC_INPUT_ROOT_CLASS}__spinner-arrow--down {
+    &:active {
+      svg {
+        transform: translateY(1px);
+      }
+    }
+  }
+}

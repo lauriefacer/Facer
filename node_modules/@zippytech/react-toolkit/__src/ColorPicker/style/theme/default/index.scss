@@ -1,0 +1,43 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+$THEME_NAME: 'default' !default;
+
+@import './variables.scss';
+
+.#{$ZIPPY_COLOR_PICKER_ROOT_CLASS}.#{$ZIPPY_COLOR_PICKER_ROOT_CLASS}--theme-#{$ZIPPY_COLOR_PICKER_THEME_NAME} {
+  color: inherit;
+
+  .#{$ZIPPY_COLOR_PICKER_ROOT_CLASS}__hue-spectrum {
+    margin-left: $ZIPPY_COLOR_PICKER_HUE_SPECTRUM_MARGIN;
+  }
+
+  .#{$ZIPPY_COLOR_PICKER_ROOT_CLASS}__rgba__input {
+    min-width: $ZIPPY_COLOR_PICKER_RGBA_INPUT_WIDTH;
+
+    .zippy-react-toolkit-text-input__input {
+      padding: $ZIPPY_COLOR_PICKER_RGBA_INPUT_PADDING;
+    }
+
+    .zippy-react-toolkit-text-input__input {
+      min-width: $ZIPPY_COLOR_PICKER_INPUT_FULL_WIDTH;
+    }
+  }
+
+  .#{$ZIPPY_COLOR_PICKER_ROOT_CLASS}__rgba__input--hexa {
+    min-width: $ZIPPY_COLOR_PICKER_RGBA_INPUT_HEXA_WIDTH;
+  }
+
+  .#{$ZIPPY_COLOR_PICKER_ROOT_CLASS}__rgba__label {
+    color: $ZIPPY_COLOR_PICKER_COLOR;
+  }
+
+  .#{$ZIPPY_COLOR_PICKER_ROOT_CLASS}__rgba__input__wrapper {
+    width: $ZIPPY_COLOR_PICKER_INPUT_FULL_WIDTH;
+    margin-bottom: $ZIPPY_COLOR_PICKER_RGBA_INPUT_WRAPPER_MARGIN;
+  }
+}

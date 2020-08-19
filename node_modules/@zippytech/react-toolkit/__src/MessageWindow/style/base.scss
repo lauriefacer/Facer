@@ -1,0 +1,99 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+@import '../../Window/style/base.scss';
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__modal-wrapper {
+  background: rgba(73, 94, 133, 0.5);
+  position: absolute;
+
+  &--fixed {
+    position: fixed;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__title-bar {
+  flex-basis: auto;
+  flex-shrink: 0;
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__title {
+  display: flex;
+  align-items: center;
+}
+
+// footer
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__footer {
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  flex-shrink: 0;
+  padding: 16px 0 8px 0;
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__tool {
+  &:hover {
+    background: #495e85;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}--buttons-align-start {
+  .#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__footer {
+    justify-content: flex-start;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}--buttons-align-end {
+  .#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__footer {
+    justify-content: flex-end;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}--buttons-align-center {
+  .#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__footer {
+    justify-content: center;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}--buttons-align-stretch {
+  .#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__footer {
+    justify-content: stretch;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}--buttons-align-space-around {
+  .#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__footer {
+    justify-content: space-around;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}--buttons-align-space-between {
+  .#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__footer {
+    justify-content: space-between;
+  }
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__button {
+  display: inline-flex;
+  margin: 2px 2px;
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__button {
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__button--ok {
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__button--cancel {
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__button--no {
+}
+
+.#{$ZIPPY_MESSAGE_WINDOW_ROOT_CLASS}__button--yes {
+}

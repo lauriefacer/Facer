@@ -1,0 +1,188 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--theme-#{$ZIPPY_CALENDAR_THEME_NAME} {
+  border: 1px solid $ZIPPY_DATE_INPUT_BORDER_GRAY_COLOR;
+  transition: border 0.2s;
+  background: white;
+  min-height: 32px;
+
+  &:hover {
+    border: 1px solid $ZIPPY_DATE_INPUT_BORDER_HOVER;
+  }
+
+  &.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--disabled {
+    border: 1px solid #c5c5c5;
+
+    &:not(.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon--disabled) {
+      opacity: 0.5;
+    }
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__input {
+    padding: 0 8px;
+    min-height: 30px;
+    height: 30px;
+    color: $ZIPPY_DATE_INPUT_COLOR;
+    font-size: $ZIPPY_CALENDAR_DATE_INPUT_FONT_SIZE;
+
+    &::-ms-clear {
+      display: none;
+    }
+
+    &:not(.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__input--disabled) {
+      background: white;
+      color: #525252;
+
+      &::-ms-clear {
+        display: none;
+      }
+    }
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__input-placeholder {
+    color: $ZIPPY_DATE_INPUT_PLACEHOLDER_COLOR;
+  }
+
+  &.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--focused {
+    box-shadow: $ZIPPY_DATE_INPUT_BOX_SHADOW;
+  }
+
+  & > .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__picker {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.34375);
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__picker {
+    .#{$ZIPPY_CALENDAR_ROOT_CLASS}__month-view {
+      box-shadow: $ZIPPY_DATE_INPUT_BOX_SHADOW;
+    }
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon-inner {
+    top: 5px;
+    left: 6px;
+    width: 5px;
+    height: 5px;
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon {
+    border: 2px solid $ZIPPY_CALENDAR_ICON_COLOR;
+    margin-right: 6px;
+    padding: 6px 7px;
+    opacity: 0.9;
+    transform: translateY(0);
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:before,
+    &:after {
+      width: 2px;
+      height: 5px;
+      top: -5px;
+    }
+
+    &:before {
+      left: 2px;
+    }
+
+    &:after {
+      right: 1px;
+      left: auto;
+    }
+  }
+
+  &.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon-inner {
+    background: rgba(#495e85, 0.5);
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__clear-icon {
+    color: $ZIPPY_CALENDAR_MAIN_COLOR;
+    fill: $ZIPPY_CALENDAR_MAIN_COLOR;
+    margin-right: 4px;
+    flex: 1 0 auto;
+    transform: translateY(0);
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &--disabled {
+      display: flex;
+    }
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__clear-icon--animation {
+    animation: zippy-react-toolkit-date-input-animation-fade-in 0.2s;
+  }
+
+  @keyframes zippy-react-toolkit-date-input-animation-fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__clear-icon--hidden {
+    visibility: hidden;
+    margin-right: 4px;
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__clear-icon:hover {
+    color: $ZIPPY_CALENDAR_ICON_COLOR;
+    fill: $ZIPPY_CALENDAR_ICON_COLOR;
+  }
+
+  &.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--focused
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__clear-icon {
+    color: $ZIPPY_CALENDAR_ICON_COLOR;
+    fill: $ZIPPY_CALENDAR_ICON_COLOR;
+  }
+
+  &:not(.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--disabled) {
+    .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:hover {
+      border-color: #3c5c99;
+      cursor: pointer;
+
+      &:after,
+      &:before,
+      .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon-inner {
+        background: #3c5c99;
+      }
+    }
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:after,
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:before {
+    background: $ZIPPY_CALENDAR_ICON_COLOR;
+  }
+
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon-inner {
+    background: $ZIPPY_CALENDAR_ICON_COLOR;
+  }
+
+  &.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--focused
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon,
+  &.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--focused
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:hover,
+  &.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--focused
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:active,
+  &:not(.#{$ZIPPY_DATE_INPUT_ROOT_CLASS}--disabled)
+  .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon:active {
+    border-color: $ZIPPY_CALENDAR_ICON_COLOR_ACTIVE;
+
+    &:after,
+    &:before,
+    .#{$ZIPPY_DATE_INPUT_ROOT_CLASS}__calendar-icon-inner {
+      background: $ZIPPY_CALENDAR_ICON_COLOR_ACTIVE;
+    }
+  }
+}

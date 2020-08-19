@@ -1,0 +1,210 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+$ZIPPY-REACT-FLEX_MAX-SIZE: 100 !default;
+
+$ZIPPY-REACT-FLEX-PREFIX: 'zippy-react-toolkit-flex-v3';
+
+.#{$ZIPPY-REACT-FLEX-PREFIX} {
+  display: flex;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--inline {
+  display: inline-flex;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--display-flex {
+  display: flex;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--display-inline-flex {
+  display: inline-flex;
+}
+
+/* ALIGN-ITEMS */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-items-center {
+  align-items: center;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-items-stretch {
+  align-items: stretch;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-items-baseline {
+  align-items: baseline;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-items-end,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-items-flex-end {
+  align-items: flex-end;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-items-start,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-items-flex-start {
+  align-items: flex-start;
+}
+
+/* ALIGN-SELF */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-center {
+  align-self: center;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-stretch {
+  align-self: stretch;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-baseline {
+  align-self: baseline;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-auto {
+  align-self: auto;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-end,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-flex-end {
+  align-self: flex-end;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-start,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-self-flex-start {
+  align-self: flex-start;
+}
+
+/* ALIGN-CONTENT */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-center {
+  align-content: center;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-stretch {
+  align-content: stretch;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-around,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-space-around {
+  align-content: space-around;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-between,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-space-between {
+  align-content: space-between;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-end,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-flex-end {
+  align-content: flex-end;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-start,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--align-content-flex-start {
+  align-content: flex-start;
+}
+
+/* JUSTIFY-CONTENT */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--justify-content-start,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--justify-content-flex-start {
+  justify-content: flex-start;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--justify-content-end,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--justify-content-flex-end {
+  justify-content: flex-end;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--justify-content-center {
+  justify-content: center;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--justify-content-space-around {
+  justify-content: space-around;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--justify-content-space-between {
+  justify-content: space-between;
+}
+
+/* WRAP */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--wrap {
+  flex-wrap: wrap;
+}
+
+/* COLUMN */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--column {
+  flex-direction: column;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* ROW */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--row {
+  flex-direction: row;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* FLEX-BASIS */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-auto {
+  flex-basis: auto;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-none,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-0 {
+  flex-basis: 0;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-fill {
+  flex-basis: fill;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-content {
+  flex-basis: content;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-fit-content {
+  flex-basis: fit-content;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-min-content {
+  flex-basis: min-content;
+}
+
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-basis-max-content {
+  flex-basis: max-content;
+}
+
+/* FLEX */
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-none,
+.#{$ZIPPY-REACT-FLEX-PREFIX}--flex-0 {
+  flex: none;
+}
+
+/* stylelint-disable */
+@for $i from 1 through $ZIPPY-REACT-FLEX_MAX-SIZE {
+  .#{$ZIPPY-REACT-FLEX-PREFIX}--flex-#{$i} {
+    flex: $i;
+  }
+}
+
+/* FLEX-GROW */
+@for $i from 0 through $ZIPPY-REACT-FLEX_MAX-SIZE {
+  .#{$ZIPPY-REACT-FLEX-PREFIX}--flex-grow-#{$i} {
+    flex-grow: $i;
+  }
+}
+
+/* FLEX-SHRINK */
+@for $i from 0 through $ZIPPY-REACT-FLEX_MAX-SIZE {
+  .#{$ZIPPY-REACT-FLEX-PREFIX}--flex-shrink-#{$i} {
+    flex-shrink: $i;
+  }
+}
+
+/* stylelint-enable */

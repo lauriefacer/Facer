@@ -1,0 +1,77 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* Progress Bar */
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__indeterminate {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &__bar {
+    position: absolute;
+    background-color: #26a69a;
+  }
+}
+
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--horizontal
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__indeterminate {
+  &__bar {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    animation: indeterminateHorizontal 2.1s
+      cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  }
+}
+
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--vertical
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__indeterminate {
+  &__bar {
+    width: 100%;
+    will-change: top, bottom;
+    animation: indeterminateVertical 2.1s
+      cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  }
+}
+
+@keyframes indeterminateHorizontal {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@keyframes indeterminateVertical {
+  0% {
+    top: -35%;
+    bottom: 100%;
+  }
+
+  60% {
+    top: 100%;
+    bottom: -90%;
+  }
+
+  100% {
+    top: 100%;
+    bottom: -90%;
+  }
+}

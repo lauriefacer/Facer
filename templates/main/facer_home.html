@@ -1,0 +1,15 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+    <br>
+    <br>
+        <h1>Facer Project</h1>
+        {% if user.is_authenticated %}
+            <a>Hello {{ user.username }} welcome to Facer Project</a>
+        {% else %}
+            <a>Welcome to Facer Project</a>
+            <a>Please login or register to explore Facer Project</a>
+        {%  endif %}
+    </div>
+{%  endblock  %}

@@ -1,0 +1,28 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS} {
+  display: inline-flex;
+  direction: ltr;
+  align-items: center;
+}
+
+.#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__input {
+  display: flex;
+  flex: 0 1 100%;
+}
+
+.#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}--rtl {
+  direction: rtl;
+}
+
+.#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__color-preview {
+  display: flex;
+  flex: 0 0 auto;
+}

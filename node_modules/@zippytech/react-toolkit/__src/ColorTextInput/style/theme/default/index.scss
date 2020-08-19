@@ -1,0 +1,43 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import './variables.scss';
+
+.#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}.#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}--theme-#{$ZIPPY_TEXT_INPUT_THEME_NAME}:not(.zippy-react-toolkit-text-input) {
+  .#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS} {
+  }
+
+  .#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__input {
+    border: none;
+    padding: 0;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__color-preview-start {
+    margin: $ZIPPY_TEXT_INPUT_PREVIEW_MARGIN_LEFT;
+  }
+
+  .#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__color-preview-white {
+    border: $ZIPPY_TEXT_INPUT_GRAY_BORDER;
+    box-shadow: $ZIPPY_TEXT_INPUT_GRAY_BOX_SHADOW;
+  }
+
+  .#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__color-preview-end {
+    margin: $ZIPPY_TEXT_INPUT_PREVIEW_MARGIN_RIGHT;
+  }
+
+  &.#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}--rtl {
+    .#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__color-preview {
+      margin: $ZIPPY_TEXT_INPUT_PREVIEW_MARGIN_RIGHT;
+    }
+
+    .#{$ZIPPY_COLOR_TEXT_INPUT_ROOT_CLASS}__color-preview-end {
+      margin: $ZIPPY_TEXT_INPUT_PREVIEW_MARGIN_LEFT;
+    }
+  }
+}

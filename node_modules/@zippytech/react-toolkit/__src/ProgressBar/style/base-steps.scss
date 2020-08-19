@@ -1,0 +1,33 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__steps {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__step {
+  position: absolute;
+}
+
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--horizontal {
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__step {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--vertical {
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__step {
+    left: 0;
+    right: 0;
+  }
+}

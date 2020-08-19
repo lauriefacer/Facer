@@ -1,0 +1,449 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// horizontal specific
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--horizontal {
+  height: $stroke;
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__barsWrapper {
+    height: 100%;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill,
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining {
+    height: 100%;
+    position: relative;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper,
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__label {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper,
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+    position: absolute;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+    left: 0;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+    right: 0;
+  }
+
+  // reverse
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      left: 0;
+      right: auto;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  //! label position start
+  // reverse
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-start.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  //! label position end
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-end {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // reverse
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-end.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // center
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-center {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: center;
+    }
+  }
+
+  // fillCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: center;
+    }
+  }
+
+  // fillCenter label overflow
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // fillCenter reverse
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: center;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+      width: 100%;
+    }
+  }
+
+  // reverse label overflow fillCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // fillEnd
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // fillEnd label overflow
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // reverse fillend
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // label overflow reverse fillEnd
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // label position remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: center;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // label overflow remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // reverse position remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // label overflow reverse position remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // position remainng start
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // labelofverflow remainng start
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // reverse remaining start
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // label overflow reverse remainingStart
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+} // end of horizontal specific
+
+//!! vertical specific
+.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--vertical {
+  width: $stroke;
+  height: 300px;
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill,
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining {
+    width: $stroke;
+  }
+
+  // reverse general
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining {
+      display: flex;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill {
+      align-items: flex-start;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining {
+      align-items: flex-end;
+    }
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__barsWrapper {
+    height: 100%;
+    flex-direction: column-reverse;
+  }
+
+  /*
+   * Label position
+   */
+
+  // end
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-end {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // reverse end
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-end.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // start
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-start {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // reverse start
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-start.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // center
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-center {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper,
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: center;
+    }
+  }
+
+  // fillCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: center;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // fillCenter label overflow
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // fillCenter reverse
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // fillCenter reverse label overflow
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // fillend
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // label overflow fillend
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // reverse fillend
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // label oveflow reverse fillend
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-fillEnd.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: center;
+    }
+  }
+
+  // label overflow remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // reverse remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // reverse label overflow remainingCenter
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingCenter.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // remainingStart
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-start;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  // labeloverflow reverse remainingStart
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // reverse remainingStart
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__fill-label-wrapper {
+      align-items: flex-end;
+    }
+
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-start;
+    }
+  }
+
+  // label overflow reverse remainingStart
+  &.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelPosition-remainingStart.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--reverse.#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}--labelOverflow {
+    .#{$ZIPPY_PROGRESS_BAR_ROOT_CLASS}__remaining-label-wrapper {
+      align-items: flex-end;
+    }
+  }
+}

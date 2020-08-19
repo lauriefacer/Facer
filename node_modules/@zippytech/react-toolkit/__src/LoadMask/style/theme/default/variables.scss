@@ -1,0 +1,12 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$ZIPPY_LOAD_MASK_THEME_NAME: 'default' !default;
+$ZIPPY_LOAD_MASK_MAIN_COLOR: #495e85 !default;
+$ZIPPY_LOAD_MASK_SECONDARY_COLOR: rgba(#000, 0.2) !default;

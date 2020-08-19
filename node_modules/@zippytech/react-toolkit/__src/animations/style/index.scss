@@ -1,0 +1,156 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.zippy-animation-fade-in {
+  opacity: 0;
+}
+
+.zippy-animation-fade-in--active {
+  transition: opacity 300ms ease;
+  opacity: 1;
+}
+
+.zippy-animation-fade-out {
+  opacity: 1;
+}
+
+.zippy-animation-fade-out--active {
+  transition: opacity 300ms ease;
+  opacity: 0;
+}
+
+/* direction enter */
+.zippy-animation-enter-from-top {
+  transform: translateY(-1000px);
+}
+
+.zippy-animation-enter-from-top--active {
+  transition: transform 300ms ease;
+  transform: translateY(0);
+}
+
+.zippy-animation-enter-from-left {
+  transform: translateX(-1000px);
+}
+
+.zippy-animation-enter-from-left--active {
+  transition: transform 300ms ease;
+  transform: translateX(0);
+}
+
+.zippy-animation-enter-from-right {
+  transform: translateX(1000px);
+}
+
+.zippy-animation-enter-from-right--active {
+  transition: transform 300ms ease;
+  transform: translateX(0);
+}
+
+.zippy-animation-enter-from-bottom {
+  transform: translateY(1000px);
+}
+
+.zippy-animation-enter-from-bottom--active {
+  transition: transform 300ms ease;
+  transform: translateY(0);
+}
+
+/* !end direction enter */
+
+/* direction exit */
+.zippy-animation-exit-to-top {
+  transform: translateY(0);
+}
+
+.zippy-animation-exit-to-top--active {
+  transform: translateY(-1000px);
+  transition: transform 300ms ease;
+}
+
+.zippy-animation-exit-to-left {
+  transform: translateX(0);
+}
+
+.zippy-animation-exit-to-left--active {
+  transform: translateX(-1000px);
+  transition: transform 300ms ease;
+}
+
+.zippy-animation-exit-to-right {
+  transform: translateX(0);
+}
+
+.zippy-animation-exit-to-right--active {
+  transform: translateX(1000px);
+  transition: transform 300ms ease;
+}
+
+.zippy-animation-exit-to-bottom {
+  transform: translateY(0);
+}
+
+.zippy-animation-exit-to-bottom--active {
+  transition: transform 300ms ease;
+  transform: translateY(1000px);
+}
+
+/* !end direction exit */
+
+.zippy-animation-zoom-in {
+  transform: scale(0);
+}
+
+.zippy-animation-zoom-in--active {
+  transition: transform 300ms ease;
+  transform: scale(1);
+}
+
+.zippy-animation-zoom-out {
+  transform: scale(1);
+}
+
+.zippy-animation-zoom-out--active {
+  transform: scale(0);
+  transition: transform 300ms ease;
+}
+
+.zippy-animation-rotate-in {
+  transform: rotate(180deg) scale(0);
+}
+
+.zippy-animation-rotate-in--active {
+  transition: transform 300ms ease;
+  transform: rotate(0deg) scale(1);
+}
+
+.zippy-animation-rotate-out {
+  transform: rotate(0deg) scale(1);
+}
+
+.zippy-animation-rotate-out--active {
+  transition: transform 300ms ease;
+  transform: rotate(180deg) scale(0);
+}
+
+.zippy-animation-roll-in {
+  transform: translateX(-150%) rotate(-90deg) scale(0);
+}
+
+.zippy-animation-roll-in--active {
+  transition: transform 300ms ease;
+  transform: translateX(0%) rotate(0deg) scale(1);
+}
+
+.zippy-animation-roll-out {
+  transition: transform 300ms ease;
+  transform: translateX(0%) rotate(0deg) scale(1);
+}
+
+.zippy-animation-roll-out--active {
+  transform: translateX(150%) rotate(90deg) scale(0);
+}

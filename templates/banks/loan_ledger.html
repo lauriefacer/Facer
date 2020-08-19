@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <h1>Loan Ledger</h1>
+    <div class="container">
+    <div id="style=" overflow-x:auto;>
+            <table id="Positions">
+        <tr>
+            <th width="5%">Cycle</th>
+            <th width="25%" style="text-align:left">Lending Bank</th>
+            <th width="25%" style="text-align:left">Borrowing Bank</th>
+            <th width="20%" style="text-align:right">Loan</th>
+        </tr>
+        {% for object in object_list %}
+            <tr>
+                <td> {{ object.CycleNumber }}</td>
+                <td style="text-align:left" >{{ object.LendingBank }}</td>
+                <td style="text-align:left">{{ object.BorrowingBank }}</td>
+                <td style="text-align:right">{{ object.Loan }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+               <a class="ml-2" href="{%  url 'banks_home' %}">Return</a>
+            </small>
+        </div>
+{% endblock %}

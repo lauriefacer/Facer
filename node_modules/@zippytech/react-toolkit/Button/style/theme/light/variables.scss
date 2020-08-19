@@ -1,0 +1,25 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$ZIPPY_BUTTON_THEME_NAME: 'light';
+$ZIPPY_BUTTON_BG_COLOR: #e4e7ed;
+$ZIPPY_BUTTON_HOVER_BG_COLOR: lighten($ZIPPY_BUTTON_BG_COLOR, 3%);
+$ZIPPY_BUTTON_PRESSED_BG_COLOR: darken($ZIPPY_BUTTON_BG_COLOR, 3%);
+$ZIPPY_BUTTON_PRESSED_HOVER_BG_COLOR: lighten(
+  $ZIPPY_BUTTON_PRESSED_BG_COLOR,
+  7%
+);
+$ZIPPY_BUTTON_UNFOCUSED_BORDER: 1px solid transparent;
+$ZIPPY_BUTTON_FOCUSED_BORDER: 1px dotted #3c5c99;
+
+$ZIPPY_BUTTON_COLOR: #495e85;
+$ZIPPY_BUTTON_FILL: $ZIPPY_BUTTON_COLOR;
+$ZIPPY_BUTTON_FONT_SIZE: 14px;
+
+$ZIPPY_BUTTON_BORDER_COLOR: #a1b6d3;

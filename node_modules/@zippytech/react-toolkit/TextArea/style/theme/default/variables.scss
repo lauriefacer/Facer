@@ -1,0 +1,31 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$THEME_NAME: 'default' !default;
+
+$ZIPPY_TEXT_AREA_THEME_NAME: 'default' !default;
+$ZIPPY_TEXT_AREA_BORDER_COLOR_FOCUSED: #a1b6d3 !default;
+$ZIPPY_TEXT_AREA_BORDER_COLOR_HOVER: #a1b6d3 !default;
+$ZIPPY_TEXT_AREA_BORDER_COLOR: #c5c5c5 !default;
+
+$ZIPPY_TEXT_AREA_FONT_SIZE: 14px !default;
+$ZIPPY_TEXT_AREA_FONT_COLOR: #525252 !default;
+$ZIPPY_TEXT_AREA_DISABLED_FONT_COLOR: rgba(
+  $ZIPPY_TEXT_AREA_FONT_COLOR,
+  0.7
+) !default;
+
+$ZIPPY_TEXT_AREA_BORDER_FOCUSED: 1px solid $ZIPPY_TEXT_AREA_BORDER_COLOR_FOCUSED !default;
+$ZIPPY_TEXT_AREA_BORDER_HOVER: 1px solid $ZIPPY_TEXT_AREA_BORDER_COLOR_HOVER !default;
+$ZIPPY_TEXT_AREA_BORDER: 1px solid $ZIPPY_TEXT_AREA_BORDER_COLOR !default;
+$ZIPPY_TEXT_AREA_BOX_SHADOW: 0 0 2px 0 $ZIPPY_TEXT_AREA_BORDER_COLOR_FOCUSED !default;
+
+$ZIPPY_TEXT_AREA_PADDING: 2px 5px !default;
+
+$ZIPPY_TEXT_AREA_BG_COLOR: white !default;

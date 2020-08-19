@@ -1,0 +1,123 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+@import './variables.scss';
+
+.#{$ZIPPY_ACCORDION_ROOT_CLASS}--theme-#{$ZIPPY_ACCORDION_THEME_NAME} {
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title {
+    background: $ZIPPY_ACCORDION_TAB_TITLE_BACKGROUND_COLOR;
+    color: $ZIPPY_ACCORDION_TAB_TITLE_TEXT_COLOR;
+    min-height: $ZIPPY_ACCORDION_TAB_TITLE_MIN_HEIGHT;
+    line-height: $ZIPPY_ACCORDION_TAB_TITLE_LINE_HEIGHT;
+    transition: background 0.2s;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--multi-expand {
+    border-top: $ZIPPY_ACCORDION_BORDER;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--collapsed {
+    border-top: $ZIPPY_ACCORDION_BORDER;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title-label {
+    padding: 2px 2px;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--focused {
+    &::before {
+      content: '';
+      position: absolute;
+      border: 1px dotted $ZIPPY_ACCORDION_TAB_TITLE_FOCUSED_BORDER;
+      top: 1px;
+      bottom: 1px;
+      left: 1px;
+      right: 1px;
+    }
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--first-tab-collapsed {
+    border-top: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--next-after-expanded {
+    border-top: $ZIPPY_ACCORDION_TAB_TITLE_BORDER;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--lastTab:not(.#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--expanded) {
+    border-bottom: none;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--rtl.#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--horizontal {
+    border-top: $ZIPPY_ACCORDION_TAB_TITLE_BORDER;
+    border-bottom: 0;
+
+    &.#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--next-after-expanded {
+      border-bottom: $ZIPPY_ACCORDION_TAB_TITLE_BORDER;
+    }
+
+    &.#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--lastTab:not(.#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--expanded) {
+      border-top: none;
+    }
+  }
+
+  // icon fills
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title__expand-tool {
+    fill: $ZIPPY_ACCORDION_TAB_TITLE_TEXT_COLOR;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title__expand-tool--disabled {
+    fill: rgba($ZIPPY_ACCORDION_TAB_TITLE_TEXT_COLOR, 0.5);
+  }
+
+  // disabled color
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--disabled {
+    color: rgba($ZIPPY_ACCORDION_TAB_TITLE_TEXT_COLOR, 0.5);
+
+    svg {
+      opacity: 0.5;
+    }
+  }
+
+  // title background colors
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title:not(.#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--disabled):hover {
+    background: $ZIPPY_ACCORDION_TAB_TITLE_OVER_BACKGROUND_COLOR;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--over {
+    background: $ZIPPY_ACCORDION_TAB_TITLE_OVER_BACKGROUND_COLOR;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--expanded {
+    background: $ZIPPY_ACCORDION_TAB_TITLE_OPEN_BACKGROUND_COLOR;
+    border-bottom: $ZIPPY_ACCORDION_BORDER;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--rotated-first-tab {
+    border-bottom: none;
+    border-top: $ZIPPY_ACCORDION_BORDER;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--expanded-rotated-last-tab {
+    border-top: $ZIPPY_ACCORDION_BORDER;
+    border-bottom: none;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--collapsed-rotated-last-tab {
+    border-top: none;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--expanded-rotated {
+    border-bottom: none;
+  }
+
+  .#{$ZIPPY_ACCORDION_ROOT_CLASS}__tab-title--next-after-expanded-rotated {
+    border-bottom: $ZIPPY_ACCORDION_BORDER;
+  }
+}

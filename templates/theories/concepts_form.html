@@ -1,0 +1,20 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+     <button class="btn btn-primary btn-sm mt-1 mb-1" onclick="javascript:history.back();">Return</button>
+    <div class="container">
+        <div class="content-section">
+            <form method ="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Concept</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-danger btn-sm mt-1 mb-1" type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

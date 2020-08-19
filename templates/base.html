@@ -1,0 +1,181 @@
+{% load static %}
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="styleshhet" type="text/css" href="{% static 'blog/main.css' %}">
+     {% if title %}
+        <title>{{ title}}</title>
+    {% else %}
+         <title>Main</title>
+    {% endif %}
+    {% load static %}
+    <style>
+        .hide {
+          display: none;
+        }
+        .myDIV:hover + .hide {
+          display: block;
+          color: mediumblue;
+        }
+    </style>
+  </head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Facer Project</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href= "{%  url 'facer_home' %}" style="color:yellow">Home<span class="sr-only">(current)</span></a>
+        </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'theories_home' %}" style="color:yellow">Theories</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mmt_home' %}" style="color:yellow">MMT</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog_home' %}" style="color:yellow">Blog</a>
+              </li>
+            {% endif %}
+        </ul>
+      </div>
+      <div class="navbar-nav">
+          {% if user.is_authenticated %}
+              <a class="nav-item nav-link" href="{%  url 'post_create' %}" style="color:yellow">New Post</a>
+              <a class="nav-item nav-link" href="{%  url 'user_profile' %}" style="color:yellow">Profile</a>
+              <a class="nav-item nav-link" href="{%  url 'logout' %}" style="color:yellow">Logout</a>
+              <a class="nav-item nav-link" href="#" style="color:yellow">User: {{ user.username }}</a>
+          {% else %}
+              <a class="nav-item nav-link" href="{%  url 'login' %}" style="color:yellow">Login</a>
+              <a class="nav-item nav-link" href="{%  url 'register' %}" style="color:yellow">Register</a>
+              <a class="nav-item nav-link" href="{%  url 'password_reset' %}" style="color:yellow">Reset Password</a>
+          {% endif %}
+      </div>
+    </nav><main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block body %}{% endblock %}
+            </div>
+        {% url 'banks_home' as home_url %}
+        {% if request.get_full_path == home_url %}
+            <div class="col-md-4">
+            <div class="content-section">
+                <h4>Actions</h4>
+                <p class='text-muted'>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-light" href="{%  url 'parameters_home' %}">Parameters</a>
+                    <a class="list-group-item list-group-item-light" href="{%  url 'banks_create' %}">Add Bank</a>
+                    <a class="list-group-item list-group-item-light" href="{%  url 'positions_calculate_all' %}">Calculate All Positions</a>
+                    <a class="list-group-item list-group-item-light" href="{%  url 'reconcile_bank_positions' %}">Reconcile Positions</a>
+                </ul>
+                </p>
+            </div>
+            </div>
+        {% endif %}
+        {% url 'theories_home' as home_url %}
+        {% if request.get_full_path == home_url %}
+            <div class="col-md-4">
+            <div class="content-section">
+                 <p></p>
+                <h4>Actions</h4>
+                <p class='text-muted'>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-light" href="{%  url 'theories_create' %}">Add Theory</a>
+                    <a class="list-group-item list-group-item-light" href="{%  url 'concepts_list' %}">Concepts</a>
+                    <a class="list-group-item list-group-item-light" href="{%  url 'treeview' 4 %}">Treeview</a>
+                </ul>
+                </p>
+            </div>
+            </div>
+        {% endif %}
+        </div>
+    </main>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+    {% block custon_is %}
+        <script>
+            $(document).ready(function(){
+                $(document).on("dblclick", ".editable", function () {
+                    var value = $(this).text();
+                    var input = "<input type='text' class='input-data' value='" + value + "' class='form-control'>";
+                    console.log("DblClick Value:"+value+" Input: "+input)
+                    $(this).html(input);
+                    $(this).removeClass("editable")
+                });
+
+                $(document).on("blur", ".input-data", function () {
+                    var value = $(this).val();
+                    var td = $(this).parent("td");
+
+                    td.html(value);
+                    td.addClass("editable");
+                    var type = td.data("type");
+                    console.log("Blur key: "+td.data("cycle_id"))
+                    console.log(td.data("id"))
+                    sendToServer(td.data("id"),value,type);
+                });
+
+                $(document).on("keypress", ".input-data", function (e) {
+                    var key = e.which;
+                    if (key == "13") {
+                        var value = $(this).val();
+                        var td = $(this).parent("td");
+                        $(this).remove();
+                        td.html(value);
+                        td.addClass("editable");
+                        var type = td.data("type");
+                        sendToServer(td.data("id"), value, type);
+                    }
+                });
+
+            function sendToServer(id, value, type) {
+                    $.ajax({
+                        url: "http://127.0.0.1:8000/facer/mmt/banks/savecycle/",
+                        type: "POST",
+                        data:{id: id, type: type, value: value},
+                        })
+                        .done(function (response) {
+                            console.log(response);
+                        })
+                        .fail(function (response) {
+                            console.log("Error occured");
+                        })
+                }
+            });
+        </script>
+    {% endblock %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="container">
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+

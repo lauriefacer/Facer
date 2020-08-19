@@ -1,0 +1,24 @@
+/**
+ * Copyright (c) 2015-present, Zippy Technologies
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@import '../../variables.scss';
+
+$ZIPPY_PANEL_THEME_NAME: 'default' !default;
+$ZIPPY_PANEL_MAIN_COLOR: #d2dff0 !default;
+$ZIPPY_PANEL_SECONDARY_COLOR: #495e85 !default;
+$ZIPPY_PANEL_BORDER_COLOR: #a1b6d3 !default;
+$ZIPPY_PANEL_BORDER_SIZE: 1px !default;
+$ZIPPY_PANEL_BORDER: $ZIPPY_PANEL_BORDER_SIZE solid $ZIPPY_PANEL_BORDER_COLOR !default;
+$ZIPPY_PANEL_BORDER_BOTTOM: $ZIPPY_PANEL_BORDER_SIZE solid
+  $ZIPPY_PANEL_BORDER_COLOR !default;
+$ZIPPY_PANEL_TITLE_COLOR: $ZIPPY_PANEL_SECONDARY_COLOR !default;
+$ZIPPY_PANEL_TITLE_BAR_BACKGROUND: $ZIPPY_PANEL_MAIN_COLOR !default;
+$ZIPPY_PANEL_TITLE_BAR_MIN_HEIGHT: #{43 - $ZIPPY_PANEL_BORDER_SIZE} !default;
+$ZIPPY_PANEL_TITLE_FONT_WEIGHT: 600 !default;
+$ZIPPY_PANEL_TITLE_PADDING: 0 8px !default;
+$ZIPPY_PANEL_TITLE_SVG_MARGIN: 6px !default;
+$ZIPPY_PANEL_FONT_SIZE: 14px;

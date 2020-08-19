@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <div class="draw">
+    <a class="btn btn-primary btn-sm mt-1 mb-1 prev"
+                           href="#">Prev</a>
+        <a class="btn btn-primary btn-sm mt-1 mb-1"
+                           href=" {%  url 'theories_home' %}">Return</a>
+        {% for object in object_list %}
+            {% if forloop.first %}
+                <h4>{{ object.concept_name }}</h4>
+                <p>{{ object.concept_description}}</p>
+                <h5>Belongs to:</h5>
+            {% endif %}
+            {% if object.display_theory == 1 %}
+                <h6>Theory: {{ object.theory_name }}</h6>
+            {% endif %}
+                <h6>Component: {{ object.component_name }}</h6>
+                <P></P>
+        {% endfor %}
+    </div>
+    {% include 'theories\includes\breadcrumbs.html' %}
+{% endblock %}
