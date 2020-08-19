@@ -8,7 +8,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
@@ -160,9 +159,9 @@ DEFAULT_FROM_EMAIL = 'LaurieFacer<laurie@facer.com.au'
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-
-DATABASES = {'default' : {dj_database_url.config(db_from_env)}}
+DATABASES={"default": dj_database_url.config(env="DATABASE_URL",
+                                              default="postgres",
+                                              conn_max_age=500)}
 
 
 
