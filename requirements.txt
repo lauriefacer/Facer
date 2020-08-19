@@ -8,7 +8,9 @@ django-money==1.1
 django-prices==2.2.0
 enmerkar==0.7.1
 gunicorn==20.0.4
+Jinja2==2.11.2
 manage.py==0.2.10
+MarkupSafe==1.1.1
 Pillow==7.2.0
 prices==1.0.0
 psycopg2-binary==2.8.5
